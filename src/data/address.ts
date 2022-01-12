@@ -1,5 +1,5 @@
 // Address consists of address information
-export const address: Data = {
+export const address = {
 	number: ['#####', '####', '###'],
 	street_prefix: ['North', 'East', 'West', 'South', 'New', 'Lake', 'Port'],
 	street_name: [

@@ -1,5 +1,5 @@
 import { address as addressData } from '../data/address';
-import { selectData } from '../helpers/selectData';
+import { selectData } from '../helpers/randomDataChooser';
 
 interface Address {
 	address: string;
@@ -14,25 +14,22 @@ interface Address {
 
 export const generate: () => Address = () => {
 	// random values
-	const street = selectData<typeof addressData, string, string>(
-		addressData,
-		'street_name'
-	);
-	const city = selectData<typeof addressData, string, string>(
-		addressData,
-		'city'
-	);
+	const street = selectData(addressData,  );
+	// const city = selectData<typeof addressData, string, string>(
+	// 	addressData,
+	// 	'city'
+	// );
 
-	const state = selectData<typeof addressData, string, string>(
-		addressData,
-		'state'
-	);
+	// const state = selectData<typeof addressData, string, string>(
+	// 	addressData,
+	// 	'state'
+	// );
 
-	const zip = selectData<typeof addressData, string, string>(
-		addressData,
-		'zip'
-	);
-	const country = selectData(addressData, 'country');
+	// const zip = selectData<typeof addressData, string, string>(
+	// 	addressData,
+	// 	'zip'
+	// );
+	// const country = selectData(addressData, 'country');
 	const latitude = 90;
 	const longitude = 180;
 

@@ -1,0 +1,1 @@
+export { generateRandomIndex } from './generateRandomIndex';

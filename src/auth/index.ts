@@ -21,7 +21,7 @@ export const userName = () => {
 //Generate random password
 //Minimum length of 5 if num < 5
 export const password = (
-	num: number,
+	num: number = 5,
 	lower: boolean = true,
 	upper: boolean = true,
 	numeric: boolean = true,
@@ -32,7 +32,7 @@ export const password = (
 		num = 5;
 	}
 
-	const res: string[] = Array.from({ length: num });
+	const res: string[] = [];
 
 	//get all the type od characters
 	const lStr = lowerChars();
@@ -89,12 +89,13 @@ export const password = (
 	}
 
 	if (passphrase.length == 0) {
-		passphrase = [...passphrase, ...lStr];
+		passphrase = [...passphrase, ...lStr, ...nStr];
 	}
 
 	while (i < num) {
 		const p = getRandomArbitrary(0, passphrase.length);
 		res.push(passphrase[p]);
+		i += 1;
 	}
 
 	return res.join('');

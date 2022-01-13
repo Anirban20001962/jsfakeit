@@ -1,1 +1,1 @@
-export { generateRandomIndex } from './generateRandomIndex';
+export { chooseRand } from './chooseRand';

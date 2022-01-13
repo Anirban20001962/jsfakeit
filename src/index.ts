@@ -1,1 +1,1 @@
-console.log('Messi');
+export { generate as address } from './address/index';

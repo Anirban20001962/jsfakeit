@@ -1,1 +1,10 @@
-export { generate as address } from './address/index';
+export {
+	generate as address,
+	street,
+	country,
+	city,
+	state,
+	zip,
+	longitude,
+	latitude,
+} from './address/index';

@@ -3,3 +3,7 @@ export function chooseRand<T, U = string>(key: keyof T, object: T): U {
 	const index = Math.floor(Math.random() * l);
 	return (object[key] as unknown as Array<any>)[index];
 }
+
+export function getRandomArbitrary(min: number, max: number) {
+	return Math.random() * (max - min) + min;
+}

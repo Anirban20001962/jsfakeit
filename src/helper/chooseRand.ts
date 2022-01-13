@@ -5,5 +5,5 @@ export function chooseRand<T, U = string>(key: keyof T, object: T): U {
 }
 
 export function getRandomArbitrary(min: number, max: number) {
-	return Math.random() * (max - min) + min;
+	return Math.floor(Math.random() * (max - min) + min);
 }

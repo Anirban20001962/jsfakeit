@@ -12,7 +12,7 @@ export const lowerChars = () => {
 };
 
 //array of upper characters
-export const upperStr = () => {
+export const upperChars = () => {
 	let a: string[] = [];
 
 	for (let i = 65; i <= 90; i++) {

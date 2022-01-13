@@ -8,3 +8,9 @@ export {
 	longitude,
 	latitude,
 } from './address';
+
+export * from './car';
+
+export * from './celebrity';
+
+export * from './beer';

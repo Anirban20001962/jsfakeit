@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 /src/**
 node_modules
 /.github/**
-=======
-src
-.github
-node_modules
-.github
->>>>>>> d5ed5cfa34f468a95a7c3f830d3b02bc6dfcbc6b
 package-lock.json
 tsconfig.json

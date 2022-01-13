@@ -2,37 +2,38 @@ import { address as addressData } from '../data/address';
 
 import { Address } from '../helper/address';
 import { chooseRand, getRandomArbitrary } from '../helper/chooseRand';
-import { replaceWithNumbers } from '../helper/replaceWithNumber';
+import { replaceWithNumber } from '../helper/replaceWithNumber';
 
+// Generates random street names
 export const street: () => string = () => {
 	return chooseRand<typeof addressData>('street_name', addressData);
 };
-
+// Generate random city names
 export const city: () => string = () => {
 	return chooseRand<typeof addressData>('city', addressData);
 };
-
+// Generate random state names
 export const state: () => string = () => {
 	return chooseRand<typeof addressData>('state', addressData);
 };
-
+// Generate random country names
 export const country: () => string = () => {
 	return chooseRand<typeof addressData>('country', addressData);
 };
-
+// Generates a random zip
 export const zip: () => string = () => {
 	const zip = chooseRand<typeof addressData>('zip', addressData);
-	return replaceWithNumbers(zip);
+	return replaceWithNumber(zip);
 };
-
+// Generate a random longitude
 export const longitude: () => number = () => {
 	return Math.floor(getRandomArbitrary(-180, 180));
 };
-
+// Generates a random latitude
 export const latitude: () => number = () => {
 	return Math.floor(getRandomArbitrary(-90, 90));
 };
-
+// Generates a radom full address
 export const generate: () => Address = () => {
 	const street_t = street();
 	const city_t = city();

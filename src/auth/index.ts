@@ -5,7 +5,7 @@ import {
 	lowerChars,
 	numChars,
 	specialChars,
-	upperStr,
+	upperChars,
 } from '../helper/strings';
 
 //Generate random username
@@ -36,7 +36,7 @@ export const password = (
 
 	//get all the type od characters
 	const lStr = lowerChars();
-	const uStr = upperStr();
+	const uStr = upperChars();
 	const sStr = specialChars();
 	const nStr = numChars();
 
@@ -75,7 +75,7 @@ export const password = (
 	if (special) {
 		passphrase = [...passphrase, ...sStr];
 		const p = getRandomArbitrary(0, sStr.length);
-		res.push(uStr[p]);
+		res.push(sStr[p]);
 
 		i += 1;
 	}

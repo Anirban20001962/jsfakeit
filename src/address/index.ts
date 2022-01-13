@@ -1,48 +1,14 @@
 import { address as addressData } from '../data/address';
-<<<<<<< HEAD
-import { chooseRand } from '../helpers/chooseRand';
 
-interface Address {
-	address: string;
-	street: string;
-	city: string;
-	state: string;
-	zip: string;
-	country: string;
-	latitude: number;
-	longitude: number;
-}
-type T = typeof addressData;
-
-export const generate: () => Address = () => {
-	// random values
-
-	const street = chooseRand<T>(addressData, 'street_name');
-	const city = chooseRand<T>(addressData, 'city');
-	const state = chooseRand<T>(addressData, 'state');
-	const country = chooseRand<T>(addressData, 'country');
-	const zip = chooseRand<T>(addressData, 'zip');
-=======
-
-import { AddressEnum, Address } from '../helper/address';
+import { Address } from '../helper/address';
 import { chooseRand } from '../helper/chooseRand';
 
 export const generate: () => Address = () => {
-	const street = chooseRand<typeof addressData>(
-		AddressEnum.street_name,
-		addressData
-	);
-	const city = chooseRand<typeof addressData>(AddressEnum.city, addressData);
-	const state = chooseRand<typeof addressData>(
-		AddressEnum.state,
-		addressData
-	);
-	const zip = chooseRand<typeof addressData>(AddressEnum.zip, addressData);
-	const country = chooseRand<typeof addressData>(
-		AddressEnum.country,
-		addressData
-	);
->>>>>>> 4e5647513ec63055c4969bb2ef54431f2602243f
+	const street = chooseRand<typeof addressData>('street_name', addressData);
+	const city = chooseRand<typeof addressData>('city', addressData);
+	const state = chooseRand<typeof addressData>('state', addressData);
+	const zip = chooseRand<typeof addressData>('zip', addressData);
+	const country = chooseRand<typeof addressData>('country', addressData);
 	const latitude = 90;
 	const longitude = 180;
 
@@ -58,8 +24,3 @@ export const generate: () => Address = () => {
 		zip,
 	};
 };
-<<<<<<< HEAD
-
-console.log(generate());
-=======
->>>>>>> 4e5647513ec63055c4969bb2ef54431f2602243f

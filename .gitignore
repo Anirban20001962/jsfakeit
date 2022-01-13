@@ -4,3 +4,4 @@ node_modules
 *.local
 client
 /dist/**
+/test/**

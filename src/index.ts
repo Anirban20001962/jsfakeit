@@ -7,4 +7,4 @@ export {
 	zip,
 	longitude,
 	latitude,
-} from './address/index';
+} from './address';

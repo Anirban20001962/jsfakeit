@@ -24,7 +24,7 @@ export const carModel = () => {
 	return chooseRand<typeof carsData>('model', carsData);
 };
 // Generates random year
-export const carYear: () => number = () => {
+export const carYear = () => {
 	return 2019;
 };
 //// Generates random Car Details

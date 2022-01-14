@@ -6,3 +6,7 @@ export * from './animal';
 export * from './food';
 export * from './file';
 export * from './auth';
+export * from './color';
+export * from './company';
+export * from './emoji';
+export * from './hacker';

@@ -10,3 +10,4 @@ export * from './color';
 export * from './company';
 export * from './emoji';
 export * from './hacker';
+export * from './internet';

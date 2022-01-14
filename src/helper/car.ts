@@ -1,4 +1,4 @@
-export interface car {
+export interface CarDetail {
 	type: string;
 	fuel: string;
 	transmission: string;

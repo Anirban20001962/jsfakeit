@@ -4,17 +4,31 @@
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test:dev": "jest --watchAll --no-cache",
+		"test": "jest",
 		"compile": "tsc"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Anirban20001962/jsfakeit"
 	},
+	"jest": {
+		"preset": "ts-jest",
+		"testEnvironment": "node",
+		"setupFiles": [
+			"./src/test/setEnv.ts"
+		],
+		"setupFilesAfterEnv": [
+			"./src/test/setup.ts"
+		]
+	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@types/jest": "^27.4.0",
+		"jest": "^27.4.7",
+		"ts-jest": "^27.1.2",
 		"ts-node": "^10.4.0",
 		"typescript": "^4.5.4"
 	}

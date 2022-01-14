@@ -1,7 +1,7 @@
 import { cars as carsData } from '../data/car';
 
-import { car } from '../helper/car';
-import { chooseRand } from '../helper/chooseRand';
+import { CarDetail } from '../helper/car';
+import { chooseRand, getRandomArbitrary } from '../helper/chooseRand';
 
 // Generates random Car type
 export const carType = () => {
@@ -25,10 +25,12 @@ export const carModel = () => {
 };
 // Generates random year
 export const carYear: () => number = () => {
-	return 2019;
+	const rndDateGap = getRandomArbitrary(0, 1000) * 60 * 60 * 24;
+	const oldDate = new Date(Date.now() - rndDateGap);
+	return oldDate.getFullYear();
 };
 //// Generates random Car Details
-export const carDetail: () => car = () => {
+export const car: () => CarDetail = () => {
 	let type_t = carType();
 	let fuel_t = carFuel();
 	let transmission_t = carTransmission();

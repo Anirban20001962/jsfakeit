@@ -1,5 +1,7 @@
 // Refer to ASCII table: https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
 
+import { getRandomArbitrary } from './chooseRand';
+
 //array of lower characters
 export const lowerChars = () => {
 	let a: string[] = [];
@@ -48,4 +50,20 @@ export const specialChars = () => {
 	}
 
 	return a;
+};
+
+//Generate random character
+export const randCharacter = () => {
+	const passphrase = [...numChars(), ...lowerChars(), ...upperChars()];
+	const i = getRandomArbitrary(0, passphrase.length);
+
+	return passphrase[i];
+};
+
+// RandomString will take in a slice of string and return a randomly selected value
+export const randomString = (a: string) => {
+	if (a.length == 1) {
+		return a;
+	}
+	return a.split('')[getRandomArbitrary(0, a.length)];
 };

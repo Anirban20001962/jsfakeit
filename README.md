@@ -1,1 +1,5 @@
-This is a package like faker.js
+# Jsfakeit
+
+Random data generator written in Javascript
+
+Detail description will be added soon

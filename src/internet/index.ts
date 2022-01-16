@@ -123,7 +123,7 @@ export const operaUserAgent = () => {
 		platform
 	);
 };
-// Generate safari user agent browswer string
+// Generate firefox user agent browswer string
 export const firefoxUserAgent = () => {
 	let ver =
 		'Gecko/' +

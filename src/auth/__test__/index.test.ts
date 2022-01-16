@@ -48,7 +48,6 @@ it('should return a password which contains special case when specified', () => 
 	const strs = specialChars();
 
 	const res = psd.split('').some((a) => strs.includes(a));
-	console.log(psd);
 	expect(res).toBe(true);
 });
 
@@ -56,6 +55,5 @@ it('should return a password which  contains space case when specified', () => {
 	const psd = password(6, false, false, false, false, true);
 	const res = psd.split('').some((a) => a == ' ');
 
-	console.log(psd);
 	expect(res).toBe(true);
 });

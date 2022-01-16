@@ -2,7 +2,13 @@ import { company as companyData } from '../data/company';
 import { job as jobData } from '../data/job';
 
 import { chooseRand } from '../helper/chooseRand';
-import { Job } from '../helper/company';
+
+export interface Job {
+	company: string;
+	title: string;
+	descriptor: string;
+	level: string;
+}
 
 // Generates random company name
 export const company = () => {

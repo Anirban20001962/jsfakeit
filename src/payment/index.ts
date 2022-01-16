@@ -7,13 +7,13 @@ import { password } from '..';
 import { replaceWithNumber } from '../helper/replaceWithNumber';
 import { randomNum } from '../number';
 
-interface CurrencyInfo {
+export interface CurrencyInfo {
 	short: string;
 	long: string;
 }
 
 // CreditCard is a intrface containing credit variables
-interface CreditCard {
+export interface CreditCard {
 	type: keyof typeof CreditCardTypes;
 	number: number;
 	exp: string;

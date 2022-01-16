@@ -1,8 +1,18 @@
 import { address as addressData } from '../data/address';
 
-import { Address } from '../helper/address';
 import { chooseRand, getRandomArbitrary } from '../helper/chooseRand';
 import { replaceWithNumber } from '../helper/replaceWithNumber';
+
+export interface Address {
+	address: string;
+	street: string;
+	city: string;
+	state: string;
+	zip: string;
+	country: string;
+	latitude: number;
+	longitude: number;
+}
 
 // Generates random street names
 export const street = () => {

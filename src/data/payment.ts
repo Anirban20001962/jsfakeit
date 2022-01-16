@@ -13,24 +13,24 @@ interface CreditCardCode {
 	size: number;
 }
 
-// CreditCardTypes is an array of credit card types
-export const creditCardTypes = [
-	'visa',
-	'mastercard',
-	'american-express',
-	'diners-club',
-	'discover',
-	'jcb',
-	'unionpay',
-	'maestro',
-	'elo',
-	'hiper',
-	'hipercard',
-];
-
-interface CreditCards {
-	[key: string]: CreditCardInfo;
+export enum CreditCardTypes {
+	'visa' = 'visa',
+	'mastercard' = 'mastercard',
+	'american-express' = 'american-express',
+	'diners-club' = 'diners-club',
+	'discover' = 'discover',
+	'jcb' = 'jcb',
+	'unionpay' = 'unionpay',
+	'maestro' = 'maestro',
+	'elo' = 'elo',
+	'hiper' = 'hiper',
+	'hipercard' = 'hipercard',
+	'mir' = 'mir',
 }
+
+type CreditCards = {
+	[key in keyof typeof CreditCardTypes]: CreditCardInfo;
+};
 
 // CreditCards contains payment information
 export const creditCards: CreditCards = {
@@ -167,3 +167,6 @@ export const creditCards: CreditCards = {
 		},
 	},
 };
+
+// CreditCardTypes is an array of credit card types
+export const creditCardTypes = Object.keys(creditCards);

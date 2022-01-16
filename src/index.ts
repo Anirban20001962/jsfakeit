@@ -11,3 +11,6 @@ export * from './company';
 export * from './emoji';
 export * from './hacker';
 export * from './internet';
+export * from './person';
+export * from './payment';
+export * from './image';

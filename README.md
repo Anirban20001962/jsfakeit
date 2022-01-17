@@ -15,7 +15,6 @@ npm install jsfakeit
 - [100+ functions](#funtions)
 - Browser Support
 - Typescript support
-- Zero dependencies
 - [Potential replacement of faker.js](https://www.npmjs.com/package/faker)
 - [Issues](https://github.com/Anirban20001962/jsfakeit/issues)
 

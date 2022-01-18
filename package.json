@@ -23,11 +23,21 @@
 		]
 	},
 	"keywords": [
-		"typescript",
-		"javascript",
 		"faker",
-		"es5",
-		"random data"
+    	"faker.js",
+    	"fakerjs",
+    	"faker-js",
+    	"marak",
+    	"fake data generator",
+    	"fake data",
+    	"fake-data",
+    	"fake-generator",
+    	"fake-data-generator",
+    	"fake content generator",
+    	"fake contextual data generator",
+    	"fake contextual data",
+		"jsfakeit",
+		"gofakeit-js"
 	],
 	"author": "",
 	"license": "ISC",

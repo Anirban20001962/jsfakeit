@@ -22,7 +22,13 @@
 			"./src/test/setup.ts"
 		]
 	},
-	"keywords": [],
+	"keywords": [
+		"typescript",
+		"javascript",
+		"faker",
+		"es5",
+		"random data"
+	],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {

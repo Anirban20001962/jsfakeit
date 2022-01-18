@@ -14,3 +14,8 @@ export * from './internet';
 export * from './person';
 export * from './payment';
 export * from './image';
+export * from './word_adjective';
+export * from './word_adverb';
+export * from './word_connective';
+export * from './word_verb';
+export * from './word_general';

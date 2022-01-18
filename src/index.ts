@@ -19,3 +19,5 @@ export * from './word_adverb';
 export * from './word_connective';
 export * from './word_verb';
 export * from './word_general';
+export * from './word_noun';
+export * from './languages';

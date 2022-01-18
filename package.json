@@ -1,6 +1,6 @@
 {
 	"name": "jsfakeit",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "",
 	"main": "dist/index.js",
 	"scripts": {
@@ -22,7 +22,13 @@
 			"./src/test/setup.ts"
 		]
 	},
-	"keywords": [],
+	"keywords": [
+		"typescript",
+		"javascript",
+		"faker",
+		"es5",
+		"random data"
+	],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {

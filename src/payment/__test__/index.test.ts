@@ -14,6 +14,5 @@ it('should generate 4-digit cvv for american express', () => {
 it('should generate a valid credit card', () => {
 	const cc = creditCard();
 
-	console.log(cc);
 	expect(isLuhn(`${cc.number}`)).toBe(true);
 });

@@ -61,9 +61,17 @@ export const randCharacter = () => {
 };
 
 // RandomString will take in a slice of string and return a randomly selected value
-export const randomString = (a: string) => {
-	if (a.length == 1) {
-		return a;
+export const randomString = (a: string | string[]) => {
+	if (Array.isArray(a)) {
+		if (a.length == 1) {
+			return a[0];
+		}
+
+		return a[getRandomArbitrary(0, a.length)];
+	} else {
+		if (a.length == 1) {
+			return a;
+		}
+		return a.split('')[getRandomArbitrary(0, a.length)];
 	}
-	return a.split('')[getRandomArbitrary(0, a.length)];
 };

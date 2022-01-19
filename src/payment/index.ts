@@ -122,9 +122,12 @@ export const achAccount = () => {
 
 //checks is the given number is luhn number
 export const isLuhn = (num: string) => {
-	let a = num.split('').map((a) => +a);
+	let a = num
+		.split('')
+		.reverse()
+		.map((a) => +a);
 	// double every second number
-	a = a.map((e, i) => (i % 2 == 0 ? 2 * e : e));
+	a = a.map((e, i) => (i % 2 != 0 ? 2 * e : e));
 	// if an element is a 2-digit number , sum the digits
 	a = a.map((e) => {
 		const b = e.toString();
@@ -132,7 +135,7 @@ export const isLuhn = (num: string) => {
 			return +b[0] + +b[1];
 		}
 
-		return e;
+		return +e;
 	});
 
 	//Sum and check if res%10 is 0

@@ -1,4 +1,4 @@
-import { isLuhn, creditCard, creditCardCvv } from '../';
+import { isLuhn, creditCardCvv, creditCard } from '../';
 
 it('should check if the a luhn number is true or not', () => {
 	const res = isLuhn('9752599622');

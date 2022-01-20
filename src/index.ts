@@ -22,3 +22,4 @@ export * from './word_general';
 export * from './word_noun';
 export * from './languages';
 export * from './word_pronoun';
+export * from './word_sentence';

@@ -1,4 +1,4 @@
-name: Backend Test with postgres
+name: Test in jsfakeit
 
 on: 
   push

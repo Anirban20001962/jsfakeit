@@ -1,4 +1,6 @@
 import { word } from '../word_general';
+import { number } from '../number';
+import { firstName, lastName } from '../person';
 
 // Generate a random sentence
 export const sentence = (wordCount: number) => {
@@ -26,8 +28,17 @@ export const paragraph = (
 			let sent = sentence(wordCount);
 			paragraph_text += sent;
 		}
-		paragraph_text += '/n';
+		paragraph_text += '\n';
 	}
 
 	return paragraph_text;
+};
+// Generate a random question
+export const question = () => {
+	let str = sentence(number(3, 10));
+	return str.slice(0, str.length - 1) + '?';
+};
+// Generate a random quote
+export const quote = () => {
+	return sentence(number(3, 10)) + `- ${firstName()} ${lastName()}`;
 };

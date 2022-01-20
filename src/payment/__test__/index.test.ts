@@ -1,7 +1,7 @@
 import { isLuhn, creditCardCvv, creditCard } from '../';
 
 it('should check if the a luhn number is true or not', () => {
-	const res = isLuhn('9752599622');
+	const res = isLuhn('79927398713');
 	expect(res).toBe(true);
 });
 

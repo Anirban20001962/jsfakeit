@@ -9,8 +9,7 @@ export const phrase = () => chooseRand('phrase', sentence);
 // export const phraseNoum = () => {
 //     let str = adjectiveDescriptive() + noun();
 
-}
-
+// }
 
 // PhraseAdverb will return a random adverb phrase
 // export const phraseAdverb = () => {

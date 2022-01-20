@@ -1,4 +1,30 @@
-import { mean, randomNum, range, rangeNormal, rangeRandom, std } from '..';
+import {
+	mean,
+	// normalDist,
+	randomNum,
+	range,
+	rangeNormal,
+	rangeRandom,
+	std,
+	variance,
+} from '..';
+
+it('should give right mean', () => {
+	const values = [3, 4, 5];
+	const res = mean(values);
+	expect(res).toBe(4);
+});
+
+it('should give right variance', () => {
+	const values = [3, 4, 5];
+	const res = variance(values);
+	expect(res).toBe(0.6666666666666666);
+});
+// it ('should generate a norm dist value for x', () => {
+// 	const res = normalDist(4, 4, 1);
+
+// 	expect(res).toBe()
+// })
 
 it('should selects a random number form an number array', () => {
 	const ex = [3, 6, 7, 9, 0];
@@ -15,14 +41,17 @@ it('should make array of all elements within a range', () => {
 });
 
 it('should make array of all elements within a range', () => {
-	const res = rangeRandom(0, 5) as number[];
-	const r = res.every((e) => e >= 0 && e < 5);
+	const [min, max] = [-10, 5];
+	const res = rangeRandom(min, max) as number[];
+
+	const r = res.every((e) => e >= min && e < max);
 
 	expect(r).toBe(true);
 });
 
 it('should generate an random array of normal distribution', () => {
-	const arr = rangeNormal(0, 10);
+	const [min, max] = [-10, 10];
+	const arr = rangeNormal(min, max);
 
 	const m = mean(arr);
 	const s = std(arr);

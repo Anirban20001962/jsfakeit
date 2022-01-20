@@ -135,7 +135,7 @@ export const isLuhn = (num: string) => {
 			return +b[0] + +b[1];
 		}
 
-		return e;
+		return +e;
 	});
 
 	//Sum and check if res%10 is 0

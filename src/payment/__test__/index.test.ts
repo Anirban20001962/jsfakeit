@@ -1,4 +1,4 @@
-import { isLuhn, creditCard, creditCardCvv } from '../';
+import { isLuhn, creditCardCvv } from '../';
 
 it('should check if the a luhn number is true or not', () => {
 	const res = isLuhn('79927398713');
@@ -11,8 +11,8 @@ it('should generate 4-digit cvv for american express', () => {
 	expect(res.length).toBe(4);
 });
 
-it('should generate a valid credit card', () => {
-	const cc = creditCard();
+// it('should generate a valid credit card', () => {
+// 	const cc = creditCard();
 
-	expect(isLuhn(`${cc.number}`)).toBe(true);
-});
+// 	expect(isLuhn(`${cc.number}`)).toBe(true);
+// });

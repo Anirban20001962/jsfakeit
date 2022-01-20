@@ -34,13 +34,15 @@ export const std = (arr: number[]) => {
 export const variance = (arr: number[]) => {
 	const m = mean(arr);
 
-	const v = arr.map((e) => (e - m) ** 2).reduce((acc, e) => acc + e);
+	const v = arr.map((e) => (e - m) ** 2);
+	const ss = v.reduce((acc, e) => acc + e, 0);
 
-	return v;
+	return ss / arr.length;
 };
 
 // get mean of an array of number
-export const mean = (arr: number[]) => arr.reduce((acc, e) => acc + e, 0);
+export const mean = (arr: number[]) =>
+	arr.reduce((acc, e) => acc + e, 0) / arr.length;
 
 // generates number in range
 export const range = (start: number, end: number, step: number = 0) => {
@@ -59,47 +61,51 @@ export const range = (start: number, end: number, step: number = 0) => {
 
 //Generate random numbers between min and max
 export const rangeRandom = (min: number, max: number) => {
-	if (min == max) {
+	if (min == max - 1) {
 		return [min];
 	}
-	if (min > max) {
+	if (min > max - 1) {
 		let tmp = min;
 		min = max;
 		max = tmp;
 	}
-	const size = max - min;
-	const res = Array(size);
+
+	const res = [];
 	for (let _ of range(min, max)) {
 		res.push(getRandomArbitrary(min, max));
 	}
 
 	return res;
 };
+// Generate normal distribution for a value, mean, std deviation
+export const normalDist = (x: number, mu: number, dev: number) => {
+	const devSq = dev ** 2;
+	const coef = 1 / Math.sqrt(2 * Math.PI * devSq);
+	const kParam = -0.5 * ((x - mu) / dev) ** 2;
+	const kernal = Math.exp(kParam);
+
+	return coef * kernal;
+};
 
 // Generate random numbers in nomral distribution
 export const rangeNormal = (min: number, max: number) => {
-	if (min == max) {
-		return [min];
+	if (min === max - 1) {
+		return [];
 	}
-	if (min > max) {
+	if (min > max - 1) {
 		let tmp = min;
 		min = max;
 		max = tmp;
 	}
 
 	const arr = rangeRandom(min, max);
+	console.log(arr);
 	const m = mean(arr);
-	const v = variance(arr);
+	console.log(m);
 	const sigma = std(arr);
+	console.log(sigma);
 
-	const coef = 1 / (sigma * Math.sqrt(2 * Math.PI));
-
-	return arr.map((e) => {
-		const param = (-1 / 2) * ((e - m) ** 2 / v);
-		const kernal = Math.exp(param);
-
-		return coef * kernal;
-	});
+	return arr.map((e) => normalDist(e, m, sigma));
 };
 
 //Selects random number from a given array

@@ -80,14 +80,12 @@ export const creditCardNumber = (type: keyof typeof CreditCardTypes) => {
 	let ui = parseInt(numStr, 10);
 	let isValid = isLuhn(`${ui}`);
 
-	while (!isValid) {
-		ui++;
-		isValid = isLuhn(`${ui}`);
+	if (!isValid) {
+		ui = creditCardNumber(type);
 	}
 
 	return ui;
 };
-
 //Generates random credit card cvv
 export const creditCardCvv = (type: keyof typeof CreditCardTypes) => {
 	const cc = creditCards[type];
@@ -98,7 +96,7 @@ export const creditCardCvv = (type: keyof typeof CreditCardTypes) => {
 	return replaceWithNumber(hashStr);
 };
 
-//Generates random credit Card
+// Generates random credit Card
 export const creditCard: () => CreditCard = () => {
 	const ccType = creditCardType();
 

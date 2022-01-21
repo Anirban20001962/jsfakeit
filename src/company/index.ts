@@ -10,35 +10,35 @@ export interface Job {
 	level: string;
 }
 
-// Generates random company name
+/** Generates random company name */
 export const company = () => {
 	return chooseRand<typeof companyData>('name', companyData);
 };
-// Generates random company suffix
+/** Generates random company suffix */
 export const companySuffix = () => {
 	return chooseRand<typeof companyData>('suffix', companyData);
 };
-// Generates random company buzz word string
+/** Generates random company buzz word string */
 export const buzzWord = () => {
 	return chooseRand<typeof companyData>('buzzwords', companyData);
 };
-// Generates a random company bs string
+/** Generates a random company bs string */
 export const bS = () => {
 	return chooseRand<typeof companyData>('buzzwords', companyData);
 };
-// Generates a random job title
+/** Generates a random job title */
 export const jobTitle = () => {
 	return chooseRand<typeof jobData>('title', jobData);
 };
-// Generates a random job descriptor
+/** Generates a random job descriptor */
 export const jobDescriptor = () => {
 	return chooseRand<typeof jobData>('descriptor', jobData);
 };
-// Generates a random job level
+/** Generates a random job level */
 export const jobLevel = () => {
 	return chooseRand<typeof jobData>('level', jobData);
 };
-// Generates a random job info
+/** Generates a random job info */
 export const job: () => Job = () => {
 	return {
 		company: company(),

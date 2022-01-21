@@ -1,7 +1,7 @@
 import { Word } from '../data/word';
 import { chooseRand, getRandomArbitrary } from '../helper/chooseRand';
 
-// Preposition will generate a random preposition
+/** Preposition will generate a random preposition*/
 export const prepositon = () => {
 	const prepTypes = [
 		prepositionCompund,
@@ -12,12 +12,12 @@ export const prepositon = () => {
 	return prepTypes[i]();
 };
 
-// PrepositionSimple will generate a random simple preposition
+/** PrepositionSimple will generate a random simple preposition*/
 export const prepositionSimple = () => chooseRand('preposition_simple', Word);
 
-// PrepositionDouble will generate a random simple preposition
+/** PrepositionDouble will generate a random simple preposition*/
 export const prepositionDouble = () => chooseRand('preposition_double', Word);
 
-// PrepositionCompound will generate a random compound preposition
+/** PrepositionCompound will generate a random compound preposition*/
 export const prepositionCompund = () =>
 	chooseRand('preposition_compound', Word);

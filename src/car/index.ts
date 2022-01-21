@@ -5,31 +5,31 @@ import { chooseRand } from '../helper/chooseRand';
 
 import { year } from '../time';
 
-// Generates random Car type
+/** Generates random Car type */
 export const carType = () => {
 	return chooseRand<typeof carsData>('type', carsData);
 };
-// Generates random Car fuel
+/** Generates random Car fuel */
 export const carFuel = () => {
 	return chooseRand<typeof carsData>('fuel_type', carsData);
 };
-// Generates random Car Transmission
+/** Generates random Car Transmission */
 export const carTransmission = () => {
 	return chooseRand<typeof carsData>('transmission_type', carsData);
 };
-// Generates random Car Brand
+/** Generates random Car Brand */
 export const carBrand = () => {
 	return chooseRand<typeof carsData>('maker', carsData);
 };
-// Generates random Car Model
+/** Generates random Car Model */
 export const carModel = () => {
 	return chooseRand<typeof carsData>('model', carsData);
 };
-// Generates random year
+/** Generates random year */
 export const carYear: () => number = () => {
 	return year();
 };
-//// Generates random Car Details
+/** Generates random Car Details */
 export const car: () => CarDetail = () => {
 	let type_t = carType();
 	let fuel_t = carFuel();

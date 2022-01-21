@@ -8,7 +8,7 @@ import {
 	upperChars,
 } from '../helper/strings';
 
-//Generate random username
+/** Generate random username*/
 export const userName = () => {
 	//random select a lastname,
 	// a random number to it and return
@@ -18,8 +18,8 @@ export const userName = () => {
 	);
 };
 
-//Generate random password
-//Minimum length of 5 if num < 5
+/**Generate random password
+Minimum length of 5 if num < 5 */
 export const password = (
 	num: number = 5,
 	lower: boolean = true,

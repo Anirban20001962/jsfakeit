@@ -8,29 +8,29 @@ import { chooseRand, getRandomArbitrary } from '../helper/chooseRand';
 import { jobDescriptor, bS } from '../company';
 import { date } from '../time';
 
-// Generates a random domain suffix
+/** Generates a random domain suffix  */
 export const domainSuffix = () => {
 	return chooseRand<typeof internetData>('domain_suffix', internetData);
 };
-// Generates a random http method
+/** Generates a random http method */
 export const httpMethod = () => {
 	return chooseRand<typeof internetData>('http_method', internetData);
 };
-// Generates a random status code
+/** Generates a random status code */
 export const httpStatusCode = () => {
 	return chooseRand<typeof statusCodeData>('general', statusCodeData);
 };
-// Generates a random simple status code
+/** Generates a random simple status code */
 export const httpStatusCodeSimple = () => {
 	return chooseRand<typeof statusCodeData>('simple', statusCodeData);
 };
-// Generates a random domain name
+//** Generates a random domain name */
 export const domainName = () => {
 	const text = (jobDescriptor() + bS()).toLowerCase();
 	const text_1 = text.replace(' ', '');
 	return `${text_1}.${domainSuffix()}`;
 };
-// Generates a random url
+/** Generates a random url */
 export const url = () => {
 	let num = getRandomArbitrary(1, 4);
 	let slug = [];
@@ -44,27 +44,26 @@ export const url = () => {
 	let url = `${scheme}://www.${domainName()}/${path}`;
 	return url.replace(' ', '');
 };
-// Generates a random ipv4Address
+/** Generates a random ipv4Address */
 export const ipv4Address = () => {
 	const num = () => {
 		return getRandomArbitrary(0, 256);
 	};
 	return `${num()}.${num()}.${num()}.${num()}`;
 };
-// Generates a random ipv6Address
+/** Generates a random ipv6Address  */
 export const ipv6Address = () => {
 	const num = () => {
 		return getRandomArbitrary(0, 65536);
 	};
 	return `${num()}.${num()}.${num()}.${num()}.${num()}.${num()}.${num()}.${num()}`;
 };
-// Generates a random Mac address
+/** Generates a random Mac address */
 export const macAddress = () => {
 	const num = () => getRandomArbitrary(17, 255).toString(16);
 	return `${num()}:${num()}:${num()}:${num()}:${num()}:${num()}`;
 };
-// LogLevel will generate a random log level
-// See data/LogLevels for list of available levels
+/** LogLevel will generate a random log level */
 export const logLevel = (logType: string) => {
 	const keys = Object.keys(logLevelsData);
 	if (keys.findIndex(logLevel) >= 0) {
@@ -73,23 +72,23 @@ export const logLevel = (logType: string) => {
 	}
 	return chooseRand<typeof logLevelsData>('general', logLevelsData);
 };
-// Generate a random linux platfrom
+/** Generate a random linux platfrom */
 export const linuxPlatformToken = () => {
 	return chooseRand<typeof computerData>('linux_processor', computerData);
 };
-// Generate a random mac platfrom
+/** Generate a random mac platfrom */
 export const macPlatformToken = () => {
 	return chooseRand<typeof computerData>('mac_processor', computerData);
 };
-// Generate a random window platfrom
+/**Generate a random window platfrom*/
 export const windowsPlatformToken = () => {
 	return chooseRand<typeof computerData>('windows_platform', computerData);
 };
-// Generate random http version
+/**Generate random http version*/
 export const httpVersion = () => {
 	return chooseRand<typeof internetData>('http_version', internetData);
 };
-// Generate random platform
+/**Generate random platform*/
 export const randomPlatform = () => {
 	const platforms = [
 		linuxPlatformToken(),
@@ -101,7 +100,7 @@ export const randomPlatform = () => {
 
 	return platforms[num];
 };
-// Generate a random opera browser user agent string
+/**Generate a random opera browser user agent string*/
 export const operaUserAgent = () => {
 	let platform =
 		'(' +
@@ -123,7 +122,7 @@ export const operaUserAgent = () => {
 		platform
 	);
 };
-// Generate firefox user agent browswer string
+/**Generate firefox user agent browswer string*/
 export const firefoxUserAgent = () => {
 	let ver =
 		'Gecko/' +
@@ -157,7 +156,7 @@ export const firefoxUserAgent = () => {
 		'Mozilla/5.0 ' + platforms[Math.floor(Math.random() * platforms.length)]
 	);
 };
-// Generate a random chrome browser user agent string
+/**Generate a random chrome browser user agent string*/
 export const chromeUserAgent = () => {
 	let randNum1 =
 		getRandomArbitrary(531, 536).toString() +

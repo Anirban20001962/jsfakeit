@@ -25,3 +25,4 @@ export * from './word_pronoun';
 export * from './word_sentence';
 export * from './word_preposition';
 export * from './minecraft';
+export * from './word_phrase';

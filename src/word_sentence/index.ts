@@ -2,7 +2,7 @@ import { word } from '../word_general';
 import { number } from '../number';
 import { firstName, lastName } from '../person';
 
-// Generate a random sentence
+/** Generate a random sentence*/
 export const sentence = (wordCount: number) => {
 	if (wordCount <= 0) return '';
 
@@ -15,7 +15,7 @@ export const sentence = (wordCount: number) => {
 
 	return `${sentence}.`;
 };
-// Generate a random paragraph
+/** Generate a random paragraph*/
 export const paragraph = (
 	wordCount: number,
 	senteneceCount: number,
@@ -33,12 +33,12 @@ export const paragraph = (
 
 	return paragraph_text;
 };
-// Generate a random question
+/** Generate a random question*/
 export const question = () => {
 	let str = sentence(number(3, 10));
 	return str.slice(0, str.length - 1) + '?';
 };
-// Generate a random quote
+/** Generate a random quote*/
 export const quote = () => {
 	return sentence(number(3, 10)) + `- ${firstName()} ${lastName()}`;
 };

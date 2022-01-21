@@ -12,7 +12,7 @@ export interface CurrencyInfo {
 	long: string;
 }
 
-// CreditCard is a intrface containing credit variables
+/** CreditCard is a interface containing credit variables*/
 export interface CreditCard {
 	type: keyof typeof CreditCardTypes;
 	number: number;
@@ -20,17 +20,17 @@ export interface CreditCard {
 	cvv: string;
 }
 
-//Generate a random long currency
+/** Generate a random long currency*/
 export const currencyLong = () => {
 	return chooseRand<typeof currencyData>('long', currencyData);
 };
 
-//Generate a random short currency
+/** Generate a random short currency*/
 export const currencyShort = () => {
 	return chooseRand<typeof currencyData>('short', currencyData);
 };
 
-//Generate currency with random currency information
+/** Generate currency with random currency information*/
 export const currency: () => CurrencyInfo = () => {
 	const long = currencyLong();
 	const short = currencyShort();
@@ -41,12 +41,12 @@ export const currency: () => CurrencyInfo = () => {
 	};
 };
 
-//Price will take in a min and max value and return a formatted price
+/** Price will take in a min and max value and return a formatted price*/
 export const price = (min: number, max: number) => {
 	return +getRandomArbitrary(min, max).toFixed(2);
 };
 
-//CreditCardType will generate a random credit card type string
+/** CreditCardType will generate a random credit card type string*/
 export const creditCardType = () => {
 	const availCardType = Object.keys(creditCards);
 	const i = getRandomArbitrary(0, availCardType.length);
@@ -55,8 +55,8 @@ export const creditCardType = () => {
 	return key;
 };
 
-//CreditCardExp will generate a random credit card expiration date string
-//Exp date will always be a future date
+/** CreditCardExp will generate a random credit card expiration date string
+Exp date will always be a future date*/
 export const creditCardExp = () => {
 	let month = getRandomArbitrary(1, 13).toString();
 	if (month.length == 1) {
@@ -67,7 +67,7 @@ export const creditCardExp = () => {
 	return `${month}/${getRandomArbitrary(currentYear + 1, currentYear + 10)}`;
 };
 
-//creditCardNumber will generate random credit card number
+/** creditCardNumber will generate random credit card number*/
 export const creditCardNumber = (type: keyof typeof CreditCardTypes) => {
 	const cc = creditCards[type];
 
@@ -86,7 +86,7 @@ export const creditCardNumber = (type: keyof typeof CreditCardTypes) => {
 
 	return ui;
 };
-//Generates random credit card cvv
+/** Generates random credit card cvv*/
 export const creditCardCvv = (type: keyof typeof CreditCardTypes) => {
 	const cc = creditCards[type];
 	const len = cc.code.size;
@@ -96,7 +96,7 @@ export const creditCardCvv = (type: keyof typeof CreditCardTypes) => {
 	return replaceWithNumber(hashStr);
 };
 
-// Generates random credit Card
+/**  Generates random credit Card*/
 export const creditCard: () => CreditCard = () => {
 	const ccType = creditCardType();
 
@@ -108,12 +108,12 @@ export const creditCard: () => CreditCard = () => {
 	};
 };
 
-//Generate 9-digit AchRouting number
+/** Generate 9-digit AchRouting number*/
 export const achRouting = () => {
 	return replaceWithNumber('#########');
 };
 
-//Generate 12-digit AchAccount number
+/** Generate 12-digit AchAccount number*/
 export const achAccount = () => {
 	return replaceWithNumber('############');
 };

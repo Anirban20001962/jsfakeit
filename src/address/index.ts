@@ -14,36 +14,36 @@ export interface Address {
 	longitude: number;
 }
 
-// Generates random street names
+/** Generates random street names */
 export const street = () => {
 	return chooseRand<typeof addressData>('street_name', addressData);
 };
-// Generate random city names
+/** Generate random city names */
 export const city = () => {
 	return chooseRand<typeof addressData>('city', addressData);
 };
-// Generate random state names
+/** Generate random state names */
 export const state = () => {
 	return chooseRand<typeof addressData>('state', addressData);
 };
-// Generate random country names
+/** Generate random country names */
 export const country = () => {
 	return chooseRand<typeof addressData>('country', addressData);
 };
-// Generates a random zip
+/** Generates a random zip */
 export const zip = () => {
 	const zip = chooseRand<typeof addressData>('zip', addressData);
 	return replaceWithNumber(zip);
 };
-// Generate a random longitude
+/** Generate a random longitude */
 export const longitude = () => {
 	return Math.floor(getRandomArbitrary(-180, 180));
 };
-// Generates a random latitude
+/** Generates a random latitude */
 export const latitude = () => {
 	return Math.floor(getRandomArbitrary(-90, 90));
 };
-// Generates a radom full address
+/** Generates a radom full address */
 export const address: () => Address = () => {
 	const street_t = street();
 	const city_t = city();

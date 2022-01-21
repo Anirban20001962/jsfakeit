@@ -1,6 +1,6 @@
 import { getRandomArbitrary } from '../helper/chooseRand';
 
-//Number will generate a random number between given min And max
+/** Number will generate a random number between given min And max */
 export const number = (min: number, max: number) => {
 	return getRandomArbitrary(min, max);
 };
@@ -25,12 +25,12 @@ export const uInt32 = (max: number) => {
 
 	return uIntArr[0];
 };
-//get std deviation of an arrayof numbers
+/** get std deviation of an arrayof numbers*/
 export const std = (arr: number[]) => {
 	return Math.sqrt(variance(arr));
 };
 
-//get variance of an array of numbers
+/** get variance of an array of number */
 export const variance = (arr: number[]) => {
 	const m = mean(arr);
 
@@ -40,11 +40,11 @@ export const variance = (arr: number[]) => {
 	return ss / arr.length;
 };
 
-// get mean of an array of number
+/**  get mean of an array of number */
 export const mean = (arr: number[]) =>
 	arr.reduce((acc, e) => acc + e, 0) / arr.length;
 
-// generates number in range
+/** generates number in range */
 export const range = (start: number, end: number, step: number = 0) => {
 	if (end < start) {
 		return [];
@@ -59,7 +59,7 @@ export const range = (start: number, end: number, step: number = 0) => {
 	return res;
 };
 
-//Generate random numbers between min and max
+/** Generate random numbers between min and max*/
 export const rangeRandom = (min: number, max: number) => {
 	if (min == max - 1) {
 		return [min];
@@ -77,7 +77,7 @@ export const rangeRandom = (min: number, max: number) => {
 
 	return res;
 };
-// Generate normal distribution for a value, mean, std deviation
+/**  Generate normal distribution for a value, mean, std deviatiom */
 export const normalDist = (x: number, mu: number, dev: number) => {
 	const devSq = dev ** 2;
 	const coef = 1 / Math.sqrt(2 * Math.PI * devSq);
@@ -87,7 +87,7 @@ export const normalDist = (x: number, mu: number, dev: number) => {
 	return coef * kernal;
 };
 
-// Generate random numbers in nomral distribution
+/** Generate random numbers in nomral distribution */
 export const rangeNormal = (min: number, max: number) => {
 	if (min === max - 1) {
 		return [];
@@ -108,7 +108,7 @@ export const rangeNormal = (min: number, max: number) => {
 	return arr.map((e) => normalDist(e, m, sigma));
 };
 
-//Selects random number from a given array
+/** Selects random number from a given array*/
 export const randomNum = (arr: number[]) => {
 	if (arr.length == 1) {
 		return arr[0];
@@ -116,7 +116,7 @@ export const randomNum = (arr: number[]) => {
 	return arr[getRandomArbitrary(0, arr.length)];
 };
 
-//Shuffles given array
+/** Shuffles given array*/
 export const shuffleNum = (arr: number[]) => {
 	for (let i of range(0, arr.length)) {
 		const j = getRandomArbitrary(0, i);
